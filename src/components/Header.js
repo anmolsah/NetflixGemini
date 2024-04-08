@@ -52,14 +52,14 @@ dispatch(changeLanguage(e.target.value));
 
   return (
     <div className="flex justify-between items-center absolute z-20 top-0 left-0 w-full px-8 py-2 bg-gradient-to-b from-black">
-    <img className="w-32" src={LOGO} alt="logo" />
+    <img className="w-32 md:w-52" src={LOGO} alt="logo" />
     {user && <div className="flex items-center">
    {showGptSearch && <select className="rounded-sm py-1 opacity-40 text-black"
       onChange={handleLanguageChange}
       >
         {SUPPORTED_LANGUAGE.map((lang) =>  <option className="rounded-sm bg-black text-white opacity-60" key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
       </select>}
-        <button className="rounded-md text-md text-white py-2 px-4 m-2 hover:bg-purple-900"
+        <button className="rounded-md text-md text-white py-2 px-4 m-2 hover:bg-purple-900 md:text-xl md:py-3"
         onClick={handleGptSearchClick}
         >{showGptSearch ? "Home" : "GPTSearch"}</button>
         <img 
@@ -68,7 +68,7 @@ dispatch(changeLanguage(e.target.value));
         alt="User-icon" 
         onClick={() => window.location.reload()}
         />
-        <button onClick={handleSignOut} className="text-white rounded-md px-4 py-2 rounded  hover:text-black hover:bg-red-600">Sign Out</button>
+        <button onClick={handleSignOut} className="text-white rounded-md px-4 py-2 rounded  hover:text-black hover:bg-red-600 md:text-xl md:py-3">Sign Out</button>
     </div>}
 </div>
 

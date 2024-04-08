@@ -15,7 +15,7 @@ const MovieCard = ({posterPath,id}) => {
   return (
    <Link to={"/watch?v=" + id}>
     <div 
-    className='w-[120px] hover:scale-90 cursor-pointer'
+    className='w-[120px] md:w-[170px] hover:scale-90 cursor-pointer'
     onMouseEnter={handleMouseEnter}
     onMouseLeave={handleMouseLeave}
     >

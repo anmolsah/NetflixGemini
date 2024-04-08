@@ -42,17 +42,17 @@ const GptSearchBar = () => {
 
   return (
     <div className="container mx-auto px-4 h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black mt-[-100px]">
-    <h1 className="text-2xl font-semibold mb-8 text-3xl font-bold bg-gradient-to-r from-indigo-800 via-pink-400 via-purple-500 to-red-500 bg-clip-text text-transparent mt-4">Let AI Be Your Personal Movie Guru with Netflix Gemini!</h1>
+    <h1 className="md:text-5xl md:font-bold text-2xl font-semibold mb-8 text-3xl font-bold bg-gradient-to-r from-indigo-800 via-pink-400 via-purple-500 to-red-500 bg-clip-text text-transparent mt-4">Let AI Be Your Personal Movie Guru with Netflix Gemini!</h1>
     <form className="flex items-center rounded-sm bg-gray-200 p-3 shadow-md" onSubmit={(e) => e.preventDefault()}>
       <input 
       ref={searchText}
       type="text"
-       className=" md:w-96 w-full bg-transparent focus:outline-none placeholder:text-gray-600 px-4" 
+       className=" md:w-[600px]  w-full bg-transparent focus:outline-none placeholder:text-gray-600 px-4 md:py-4 md:px-4 md:rounded-lg" 
        placeholder={lang[langKey].gptSearchPlaceholder} 
        />
       <button 
       type="button" 
-      className="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-full focus:outline-none" 
+      className="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-full focus:outline-none md:py-4 md:text-lg" 
       onClick={handleGptSearchClick}>
         {lang[langKey].search}
       </button>
