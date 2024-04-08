@@ -1,0 +1,56 @@
+
+@media (max-width: 768px) {
+    .justify-between {
+      justify-content:space-between;
+    }
+  
+    .px-8 {
+      padding-left: 16px; /* Increase left padding for better spacing */
+      padding-right: 16px; /* Increase right padding for better spacing */
+    }
+  
+    .w-32 {
+      width: 90px; /* Decrease logo size for smaller screens */
+    }
+  
+    .flex.items-center > * {
+      margin: 4px; /* Add margin to elements inside the flex container for better spacing */
+    }
+  
+    .rounded-md {
+      border-radius: 4px;
+      font-size: 0.875rem; /* Decrease border radius for buttons for smaller screens */
+    }
+  
+    .text-md {
+      font-size: 0.875rem; /* Decrease text size for buttons for smaller screens */
+    }
+  
+    .py-2 {
+      padding-top: 8px; /* Increase top padding for buttons for better touch interaction */
+      padding-bottom: 8px; /* Increase bottom padding for buttons for better touch interaction */
+    }
+  
+    .px-4 {
+      padding-left: 6px; /* Decrease horizontal padding for buttons for smaller screens */
+      padding-right: 14px; /* Decrease horizontal padding for buttons for smaller screens */
+    }
+  
+    .w-8,
+    .h-8 {
+      width: 24px; /* Decrease user icon size for smaller screens */
+      height: 24px; /* Decrease user icon size for smaller screens */
+    }
+    .rounded-md.text-md.py-2.px-4 {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        font-size: 0.8rem;
+      }
+
+      .rounded-sm.py-1 {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        font-size: 0.6rem; /* Adjust font size as needed */
+      }
+  }
+  
