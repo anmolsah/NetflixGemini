@@ -61,7 +61,7 @@ dispatch(changeLanguage(e.target.value));
       </select>}
         <button className="rounded-md text-md text-white py-2 px-4 m-2 hover:bg-purple-900 md:text-xl md:py-3"
         onClick={handleGptSearchClick}
-        >{showGptSearch ? "Home" : "GPTSearch"}</button>
+        >{showGptSearch ? "Home" : "GeminiSearch"}</button>
         <img 
         className="w-8 h-8  mr-2 rounded-md cursor-pointer" 
         src={user?.photoURL} 
