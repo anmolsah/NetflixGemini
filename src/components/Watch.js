@@ -1,26 +1,30 @@
-import React from 'react'
-import useWatchVideos from './../hooks/useWatchVideos';
-import { Link, useSearchParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { LOGO } from '../utils/constants';
-import Spinner from './../spinner/Spinner';
-import '../responsive/watch.css';
+import React from "react";
+import useWatchVideos from "./../hooks/useWatchVideos";
+import { Link, useSearchParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { LOGO } from "../utils/constants";
+import Spinner from "./../spinner/Spinner";
+import "../responsive/watch.css";
 
 const Watch = () => {
-    const [searchParams] = useSearchParams();
-    const movieid = searchParams.get("v");
-    useWatchVideos(movieid);
-    const wVideo = useSelector((store) => store.movies.WatchVideos);
-    return (
-      <div className="watch-1 relative w-screen h-screen bg-black flex flex-col justify-center items-center">
+  const [searchParams] = useSearchParams();
+  const movieid = searchParams.get("v");
+  useWatchVideos(movieid);
+  const wVideo = useSelector((store) => store.movies.WatchVideos);
+  return (
+    <div className="watch-1 relative w-screen h-screen bg-black flex flex-col justify-center items-center">
       <div className="watch-2 absolute top-0 left-0 right-0 z-20 flex justify-center items-center">
         <Link to="/browse">
-          <img className="watch-3 w-36 md:w-52 md:hover:scale-90" src={LOGO} alt="logo" />
+          <img
+            className="watch-3 w-36 md:w-52 md:hover:scale-90"
+            src={LOGO}
+            alt="logo"
+          />
         </Link>
       </div>
       <div className="relative z-10">
         {!wVideo ? (
-          <Spinner/>
+          <Spinner />
         ) : (
           <div className="border-4 border-red-500 overflow-hidden rounded-lg">
             <iframe
@@ -34,7 +38,7 @@ const Watch = () => {
         )}
       </div>
     </div>
-    );
-}
+  );
+};
 
 export default Watch;
