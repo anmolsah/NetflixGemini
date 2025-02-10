@@ -1,38 +1,33 @@
-
 @media (max-width: 768px) {
   .watch-1 {
-    width: 100%; 
+    width: 100%;
   }
 
   .watch-1 {
-    height: calc(
-      100vh - 56px
-    ); 
+    height: calc(100vh - 56px);
   }
 
   .watch-2 {
-    top: 56px; 
+    top: 56px;
   }
 
   .watch-3 {
     width: 160px;
-    height: 100px; 
+    height: 100px;
   }
 
   .watching {
-    width:90vw;; 
-    max-width: 800px; 
+    width: 90vw;
+    max-width: 800px;
     margin: auto;
   }
 
   .watching {
-    height: 300px; 
-    max-height: calc(
-      100vh - 56px - 32px
-    ); 
+    height: 300px;
+    max-height: calc(100vh - 56px - 32px);
   }
 
   .-mt-10 {
-    margin-top: 0px; 
+    margin-top: 0px;
   }
 }

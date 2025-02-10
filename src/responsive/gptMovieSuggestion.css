@@ -1,16 +1,19 @@
 @media (max-width: 768px) {
-    .background {
-        background: linear-gradient(to top right, #4f46e5, #0f0c29, #302b63, #24243e); 
-    }
-    
-    .-mt-32 {
-        margin-top: 105px; /* Adjust margin from top for smaller screens */
-      }
+  .background {
+    background: linear-gradient(
+      to top right,
+      #4f46e5,
+      #0f0c29,
+      #302b63,
+      #24243e
+    );
+  }
 
-      .opacity-90 {
-        opacity: 0.952; /* Ensure full opacity for content visibility */
-      }
+  .-mt-32 {
+    margin-top: 105px; /* Adjust margin from top for smaller screens */
+  }
 
-
-
+  .opacity-90 {
+    opacity: 0.952; /* Ensure full opacity for content visibility */
+  }
 }

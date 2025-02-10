@@ -1,43 +1,42 @@
 /* CSS for phone screens */
 @media (max-width: 768px) {
-    .container {
-        background-color: black;
-        position: fixed;
-        width:100vw;
-        height: 100vh;
-        padding-bottom: 90px;
-    }
-  
-    .text-2xl {
-      font-size: 1.8rem; /* Decrease heading font size for smaller screens */
-      text-align: center;
-    }
-  
-    .text-3xl {
-      font-size: 1.9rem;
-      font-weight: 700; /* Decrease heading font size for smaller screens */
-    }
-  
-    .md\:w-96 {
-      width: calc(100% - 16px); /* Adjust input width for smaller screens */
-    }
-  
-    .p-3 {
-      padding: 6px; /* Adjust padding for form container for smaller screens */
-    }
-  
-    .px-4 {
-      padding-left: 8px; /* Adjust horizontal padding for input field for smaller screens */
-      padding-right: 8px; /* Adjust horizontal padding for input field for smaller screens */
-    }
-  
-    .px-6 {
-      padding-left: 8px; /* Adjust horizontal padding for button for smaller screens */
-      padding-right: 8px; /* Adjust horizontal padding for button for smaller screens */
-    }
-
-    .shadow-md{
-        border-radius: 10px;
-    }
+  .container {
+    background-color: black;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    padding-bottom: 90px;
   }
-  
+
+  .text-2xl {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .text-3xl {
+    font-size: 1.9rem;
+    font-weight: 700;
+  }
+
+  .md\:w-96 {
+    width: calc(100% - 16px);
+  }
+
+  .p-3 {
+    padding: 6px;
+  }
+
+  .px-4 {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .px-6 {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .shadow-md {
+    border-radius: 10px;
+  }
+}
