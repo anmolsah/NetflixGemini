@@ -20,7 +20,7 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/netflix-gemini.git
+   git clone git@github.com:anmolsah/NetflixGemini.git
 
 
 2. **Install dependencies**
