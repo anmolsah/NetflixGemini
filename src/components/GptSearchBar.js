@@ -23,7 +23,7 @@ const GptSearchBar = () => {
 
     const handleGptSearchClick = async() =>{
       setIsLoading(true);
-      const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+      const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash"});
       const geminiQuery = "You are my personal movie recommendation expert. I'm in the mood for something like" + searchText.current.value + ".Recommend 5 movies that capture a similar feel, comma seperated like the example result given ahead. Example Result: Gadar, Sholay, Don, Golmaal, Koi Mil Gaya";
       
       const result = await model.generateContent(geminiQuery);
