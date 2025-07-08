@@ -1,5 +1,3 @@
-
-````markdown
 # 🎥 Netflix Gemini
 
 **Netflix Gemini** is an AI-powered movie and TV show discovery web app inspired by Netflix. Built using **React**, **Redux**, and **Firebase**, this platform helps users decide what to watch next based on natural language input like mood, preferences, or genres.
@@ -12,6 +10,7 @@
 
 - 🔍 **AI-based Movie Search** – Ask what to watch based on mood or keywords
 - 🎬 **Watch Trailers** – View trailers for each title
+- 📌 **Personal Watchlist** – Add and manage favorite shows/movies
 - 🔐 **Firebase Authentication** – Secure login and user sessions
 - 🌐 **Real-time Suggestions** – Uses TMDB and Gemini API for dynamic content
 
@@ -22,7 +21,7 @@
 1. **Clone the repository**
    ```bash
    git clone https://github.com/yourusername/netflix-gemini.git
-````
+
 
 2. **Install dependencies**
 
@@ -72,6 +71,6 @@ See the [LICENSE](LICENSE) file for more details.
 * [Firebase](https://firebase.google.com/) – For backend & auth
 * [Google Gemini API](https://ai.google.dev/) – For AI integration
 
-```
+````
 
 
