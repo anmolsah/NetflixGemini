@@ -1,6 +1,7 @@
 import { checkValidData } from "../utils/validate";
 import Header from "./Header";
 import { useRef, useState } from "react";
+import toast, { Toaster } from 'react-hot-toast';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -26,9 +27,9 @@ const Login = () => {
     setIsLoading(true); //spinner
 
     const message = checkValidData(email.current.value, password.current.value);
-    setErrorMessage(message);
 
     if (message) {
+      toast.error(message);
       setIsLoading(false); //spinner
       return;
     }
@@ -43,6 +44,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
+          toast.success("Account created successfully! Welcome to Netflix Gemini!");
           updateProfile(user, {
             displayName: name.current.value,
             photoURL: AVATAR,
@@ -60,14 +62,23 @@ const Login = () => {
               setIsLoading(false); //spinner
             })
             .catch((error) => {
-              setErrorMessage(error.message);
+              toast.error("Failed to update profile. Please try again.");
               setIsLoading(false); //spinner
             });
         })
         .catch((error) => {
           const errorCode = error.code;
-          const errorMessage = error.message;
-          setErrorMessage(errorMessage + "-" + errorCode);
+          let errorMessage = "Something went wrong. Please try again.";
+          
+          if (errorCode === 'auth/email-already-in-use') {
+            errorMessage = "This email is already registered. Please sign in instead.";
+          } else if (errorCode === 'auth/weak-password') {
+            errorMessage = "Password is too weak. Please use at least 6 characters.";
+          } else if (errorCode === 'auth/invalid-email') {
+            errorMessage = "Please enter a valid email address.";
+          }
+          
+          toast.error(errorMessage);
           setIsLoading(false); //spinner
         });
     } else {
@@ -80,12 +91,28 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
+          toast.success("Welcome back! Successfully signed in.");
           setIsLoading(false); //spinner
         })
         .catch((error) => {
           const errorCode = error.code;
-          const errorMessage = error.message;
-          setErrorMessage(errorMessage + "-" + errorCode);
+          let errorMessage = "Sign in failed. Please try again.";
+          
+          if (errorCode === 'auth/user-not-found') {
+            errorMessage = "No account found with this email. Please sign up first.";
+          } else if (errorCode === 'auth/wrong-password') {
+            errorMessage = "Incorrect password. Please try again.";
+          } else if (errorCode === 'auth/invalid-email') {
+            errorMessage = "Please enter a valid email address.";
+          } else if (errorCode === 'auth/user-disabled') {
+            errorMessage = "This account has been disabled. Please contact support.";
+          } else if (errorCode === 'auth/too-many-requests') {
+            errorMessage = "Too many failed attempts. Please try again later.";
+          } else if (errorCode === 'auth/invalid-credential') {
+            errorMessage = "Invalid email or password. Please check your credentials.";
+          }
+          
+          toast.error(errorMessage);
           setIsLoading(false);
         });
     }
@@ -97,6 +124,31 @@ const Login = () => {
   return (
     <div>
       <Header />
+      <Toaster 
+        position="top-center"
+        toastOptions={{
+          duration: 4000,
+          style: {
+            background: '#333',
+            color: '#fff',
+            fontSize: '14px',
+            borderRadius: '8px',
+            padding: '12px 16px',
+          },
+          success: {
+            iconTheme: {
+              primary: '#10B981',
+              secondary: '#fff',
+            },
+          },
+          error: {
+            iconTheme: {
+              primary: '#EF4444',
+              secondary: '#fff',
+            },
+          },
+        }}
+      />
       {isLoading && <Spinner />}
       <div className="relative">
         <img
@@ -141,9 +193,6 @@ const Login = () => {
                 placeholder="Password"
               />
             </div>
-            <p className="text-red-600 font-bold text-lg py-2">
-              {errorMessage}
-            </p>
             <button
               type="submit"
               className="w-full bg-red-600 hover:bg-red-700 text-white py-4 rounded-md font-medium"
